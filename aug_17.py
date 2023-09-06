@@ -53,20 +53,21 @@
 
 # ********Arbitrary Arguments, *args
 # arguments that will be passed into your function, add a * before the parameter name in the function definition.
-def my_function(*kids):
-    print(kids)
-    for i in kids:
-        print("The youngest child is " + i)
-#
-my_function("Emil", "Tobias", "Linus")
+# def my_function(*kids):
+#     print(kids)
+#     for i in kids:
+#         print("The youngest child is " + i[0])
+# #
+# my_function("Emil", "Tobias", "Linus")
 # ()
+
 
 # Keyword Arguments
 # You can also send arguments with the key = value syntax.
-# def my_function(child3, child2, child1):
-#   print("The youngest child is " + factorialchild3)
-
-# my_function(child1 = "Emil", child2 = "Tobias", child3 = "Linus")
+# def my_function( child2, child1,child3):
+#   print("The youngest child is " ,child3)
+#
+# my_function(child1="Emil", child2="Tobias", child3="Linus")
 
 
 
@@ -75,10 +76,16 @@ my_function("Emil", "Tobias", "Linus")
 # that will be passed into your function, add two asterisk:
 # ** before the parameter name in the function definition.
 
+
+# {
+#     "fname":"1",
+#     "lname":"2"
+# }
 # def my_function(**kid):
-#   print("His last name is " + kid["lname"])
+#   print(kid["fname"] + kid["lname"])
 #
-# my_function(fname = "Tobias", lname = "Refsnes")
+# my_function(fname = int(input("enter one number")), lname = int(input("enter one number")))
+
 
 
 # Passing a List as an Argument
