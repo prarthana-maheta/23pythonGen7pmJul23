@@ -72,23 +72,24 @@
 # # Instance created
 # e = Example()
 # # __call__ method will be calledpr
-# print(e.display())
 # print(e())
-
-
-# class Product:
-#     def __init__(self):
-#         print("Instance Created")
-#     # Defining __call__ method
-#     def __call__(self, a, b):
-#         print(a * b)
-#     def multi(self,a,b):
-#         print(a*b)
-# # Instance created
-# ans = Product()
-# # __call__ method will be called
+# # print(e())
+#
+#
+class Product:
+    # def __init__(self):
+    #     print("Instance Created")
+    # Defining __call__ method
+    def __call__(self, a, b):
+        print(a * b)
+    def multi(self,a,b):
+        print(a*b)
+# Instance created
+ans = Product()
+# __call__ method will be called
 # ans(10, 20)
-# ans.multi(10,20)
+demo = Product()
+ans.multi(10,20)
 
 
 # The __str__() Function
@@ -106,30 +107,30 @@
 # print(p1)
 
 # The string representation of an object WITH the __str__() function:
-#
+
 # class Person:
-#   def __init__(self, name, age):
-#     self.name = name
-#     self.age = age
+#   # def __init__(self, name, age):
+#   #   self.name = name
+#   #   self.age = age
 #
-#   def __str__(self):
-#     return f"aapne object call krvaya hai, methoda call kro"
-#   def display(self):
-#     return f"{self.name}"
+#   # def __str__(self):
+#   #   return f"aapne object call krvaya hai, methoda call kro"
+#   def display(age):
+#     return f"{age}"
 #
-# p1 = Person("John", 36)
+# p1 = Person()
 #
 # print(p1)
-# a=p1.display()
+# a=p1.display(46)
 # print(a)
 
-Inheritance
-
-A-->B
-
-A--->B-->C
-
-a,b-->c
-
-A--->b,c-->d
+# Inheritance
+#
+# A-->B
+#
+# A--->B-->C
+#
+# a,b-->c
+#
+# A--->b,c-->d
 
