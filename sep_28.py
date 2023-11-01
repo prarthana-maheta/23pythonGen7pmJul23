@@ -1,3 +1,27 @@
+# Single inheritance in python
+# Base class
+# class Parent_class:
+#     # Constructor
+#     def __init__(self, name, id):
+#         self.name = name
+#         self.id = id
+#     def Employee_Details(self):
+#         return self.id, self.name
+#     def Employee_check(self):
+#         if self.id > 500000:
+#             return " Valid Employee "
+#         else:
+#             return " Invalid Employee "
+# class Child_class(Parent_class):
+#     def End(self):
+#         print(" END OF PROGRAM ")
+# Employee1 = Parent_class("Employee1", 600445)
+# print(Employee1.Employee_Details(), Employee1.Employee_check())
+# Employee2 = Child_class("Employee2", 198754)
+# print(Employee2.Employee_Details(), Employee2.Employee_check())
+# Employee2.End()
+
+
 # Multiple Inhertiance
 # class SuperClass1:
 #     # features of SuperClass1
@@ -9,13 +33,12 @@
 #     # features of SuperClass1 + SuperClass2 + MultiDerived class
 
 
-
 # class Mammal:
 #     def mammal_info(self):
 #         print("Mammals can give direct birth.")
 #
 # class WingedAnimal:
-#     def winged_animal_info(self):
+#     def mammal_info(self):
 #         print("Winged animals can flap.")
 #
 # class Bat(Mammal, WingedAnimal):
@@ -35,9 +58,9 @@
 #
 # class SuperClass2:
 #     def info(self):
-#         print("Super Class 2 method called")
+#         super().info()
 #
-# class Derived(SuperClass1, SuperClass2):
+# class Derived(SuperClass2, SuperClass1):
 #     pass
 #
 # d1 = Derived()
@@ -56,72 +79,58 @@
 #     pass
 
 
-
 # __mro__, mro()
 # class A:
 #     def myname(self):
 #         print(" I am a class A")
-#
-#
 # class B(A):
 #     def myname(self):
 #         print(" I am a class B")
-#
-#
-# class C(A):
+# class C(B):
 #     def myname(self):
 #         print("I am a class C")
-#
 #     # classes ordering
-#
-#
-# class D(B, C):
+# class D(C):
 #     pass
-#
-#
 # # it prints the lookup order
-# print(D.__mro__)
+# # print(D.__mro__)
 # print(C.mro())
-
-
 
 
 # 111111
 # class A:
-#     def myname(self):
+#     def myyname(self):
 #         print("I am a class A")
-#
-#
 # class B(A):
 #     def myname(self):
 #         print("I am a class B")
-#
-#
-# class C(A):
-#     def myname(self):
+# class C(A,B):
+#     def myyname(self):
 #         print("I am a class C")
-#
-#
 # c = C()
 # print(c.myname())
 
 
 # 2222
 # class A:
-#   def method(self):
-#     print("A.method() called")
-#
+#       def __init__(self,name):
+#           self.name=name
+#       def __call__(self):
+#           return self.name
+#       def method(self):
+#         print(f"A.method() called with {self.name}")
 # class B:
-#   def method(self):
-#     print("B.method() called")
-#
+#     def __init__(self, name):
+#         super().__init__("XYZ")
+#         self.name = name
+#     def method(self):
+#         print("B.method() called")
 # class C(A, B):
 #   pass
-#
-# class D(C, B):
+# class D(C):
 #   pass
-#
-# d = D()
+# d = D("PKM")
+# print(d())
 # d.method()
 
 
@@ -143,7 +152,6 @@
 #         x = self.x + other.x
 #         y = self.y + other.y
 #         return Point(x, y)
-#
 #
 # p1 = Point(1, 2)
 # p2 = Point(2, 3)
@@ -171,13 +179,18 @@
 
 # Method overloading
 # class Human:
-#    def sayHello(self, name=None):
-#       if name is not None:
-#          print ('Hello ' + name)
-#       else:
-#          print ('Hello ')
+#     def sayHello(self, name):
+#         if name is not None:
+#             print('Hello ' + name)
+#         # else:
+#         #    print ('Hello ')
+#
+#     def sayHello(self, name):
+#         print('Hello ')
+#         # return 1
+#
 # obj = Human()
-# print(obj.sayHello())
+# # print(obj.sayHello())
 # print(obj.sayHello('Rambo'))
 
 
@@ -187,7 +200,69 @@
 #
 # class NotBase(Base):
 #   def method(self):
+#       super().method(param2="abc")
 #       print("dill")
 #
 # obj = NotBase()
 # obj.method()
+
+# x=y=5,10
+# res= x == y
+# print(res)
+
+
+# class University:
+#     def __init__(self):
+#         self.name = 'Yele University'
+#         print("You are in University Class Constructor")
+#     def disp(self):
+#         print('You are in University class disp method')
+# class College(University):
+#     def __init__(self):
+#         super().__init__()
+#         self.name = 'Yale School of Medicine'
+#         print('You are in college Class Constructor')
+#     def show(self):
+#         print('College class instance method:', self.name)
+# college = College()
+# # college.show()
+# college.disp()
+
+
+
+
+
+
+
+# class Taxi:
+#     def __init__(self, model, capacity, variant):
+#         self.__model = model
+#         self.__capacity = capacity
+#         self.__variant = variant
+#     def getModel(self):
+#         return self.__model
+#     def getCapacity(self):
+#         return self.__capacity
+#     def setCapacity(self, capacity):
+#         self.__capacity = capacity
+#     def getVariant(self):
+#         return self.__variant
+#     def setVariant(self, variant):
+#         self.__variant = variant
+# class Vehicle(Taxi):
+#
+#     def __init__(self, model, capacity, variant, color):
+#         super().__init__(model, capacity, variant)
+#         self.__color = color
+#     def vehicleInfo(self):
+#         return (self.getModel() + " " + self.getVariant()
+#                 +" in " + self.__color + " with " + self.getCapacity() + " seats")
+#
+# # v1 = Vehicle("i20 Active", "4", "SX", "Bronze")
+# # print(v1.vehicleInfo())
+# # print(v1.getModel())
+# v2 = Vehicle("Fortuner", "7", "MT2755", "White")
+# # print(v2.vehicleInfo())
+# print(v2.getModel())
+#
+#

@@ -35,14 +35,14 @@ thisdict = {
 #
 # print(thisdict.get("yea","no"))
 
-# print(thisdict.keys())
+print(thisdict.keys())
 #
 # print(thisdict.values())
 
-# x=thisdict.items()
+x=thisdict.items()
 # print(x[0])
-# for i in x:
-#     print(i)
+for i,j in x:
+    print(i)
 
 
 # add data to dict:
@@ -107,6 +107,7 @@ print(car)  # after the change
 #   "brand": "Ford",
 #   "model": "Mustang",
 #   "year": 1964
+
 # }
 # del thisdict['band']
 # print(thisdict)
@@ -163,32 +164,32 @@ print(car)  # after the change
 # print(x)
 
 # 7) fromkeys()
-# x = ('key1', 'key2', 'key3')
-# y=(1,2)
+x = ('key1', 'key2', 'key3')
+y=(1,2)
 # thisdict = dict.fromkeys(x,y)
-# thisdict=dict(zip(x,y))
-# print(thisdict)
+thisdict=list(zip(x,y))
+print(thisdict)
 
 # nested dict:
-# child1 = {
-#   "name" : "Emil",
-#   "year" : 2004
-# }
-# child2 = {
-#   "name" : "Tobias",
-#   "year" : 2007
-# }
-# child3 = {
-#   "name" : "Linus",
-#   "year" : 2011
-# }
-# myfamily = {
-#    "child1":None,
-#   "child2" : child2,
-#   "child3" : child3
-# }
+child1 = {
+  "name" : "Emil",
+  "year" : 2004
+}
+child2 = {
+  "name" : "Tobias",
+  "year" : 2007
+}
+child3 = {
+  "name" : "Linus",
+  "year" : 2011
+}
+myfamily = {
+   "child1":None,
+  "child2" : child2,
+  "child3" : child3
+}
 # #
-# print(myfamily)
+print(myfamily)
 #
 # print(myfamily["child2"]["name"])
 # print(myfamily.get("child2").get("name"))
@@ -223,6 +224,20 @@ myfamily = {
 # if "child1" in myfamily.keys():
 #     print("yes")
 
-l1=['a', 'b', 'c', 'd', 'e', 'f']
-l2=[1, 2, 3, 4, 5]
-print(dict(zip(l1,l2)))
+# l1=['a', 'b', 'c', 'd', 'e', 'f']
+# l2=[1, 2, 3, 4, 5]
+# print(dict(zip(l1,l2)))
+
+myfamily = {
+    "child1": "abc",
+    "child2": {"abc":1},
+    "child3": "abc"
+}
+# myfa=myfamily
+# myfam=myfamily.copy()
+# myfamily['change']=1
+# print(myfa)
+# print(myfam)
+for i,j in myfamily.items():
+    if isinstance(j,dict):
+        print("yes")
