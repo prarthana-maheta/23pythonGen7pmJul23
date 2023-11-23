@@ -260,7 +260,7 @@ num3 = 52
 # example3: pallindrome checking yes or no?
 # example4: one output with common element second with not common elements
 
-s1={"mam","122"}
-for i in s1:
-    if i == i[::-1]:
-        print(f"{i} is pallindrome")
+# s1={"mam","122"}
+# for i in s1:
+#     if i == i[::-1]:
+#         print(f"{i} is pallindrome")
