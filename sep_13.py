@@ -230,7 +230,8 @@ myfamily = {
 
 myfamily = {
     "child1": "abc",
-    "child2": {"abc":1},
+    "child2":
+        {"abc":1},
     "child3": "abc"
 }
 # myfa=myfamily

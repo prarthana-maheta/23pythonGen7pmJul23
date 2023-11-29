@@ -125,19 +125,18 @@ import datetime
 # print("s2:", s2)
 
 #
-from datetime import datetime
-
-# date_string =
-# print("date_string =", date_string)
-
-# use strptime() to create date object
-date_object = datetime.strptime("25 December, 2022", "%d %B, %Y")
-
-print("date_object =", date_object)
-
-start_time=time.time()
-for i in range(1,100):
-    time.sleep(1)
-    print(i*i)
-print(time.time()-start_time)
-
+# from datetime import datetime
+#
+# # date_string =
+# # print("date_string =", date_string)
+#
+# # use strptime() to create date object
+# date_object = datetime.strptime("25 December, 2022", "%d %B, %Y")
+#
+# print("date_object =", date_object)
+#
+# start_time=time.time()
+# for i in range(1,100):
+#     time.sleep(1)
+#     print(i*i)
+# print(time.time()-start_time)
