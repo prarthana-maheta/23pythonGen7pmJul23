@@ -62,52 +62,64 @@
 
 # regex
 
-import re
+# import re
+#
+# txt = "The Spainai ai"
+# x = re.findall("ai", txt)
+# y = re.search("ai", txt)
+# print(x)
+# print(y)
 
-txt = "The Spain"
-x = re.findall(".*$", txt)
-print(x)
-
-import re
-
-txt = "The rain in Spain"
-x = re.findall("ai", txt)
-print(x)
-
-import re
-
-txt = "The rain in Spain"
-x = re.findall("harsh", txt)
-y = re.search("\s", txt)
-print(len(x))
-print(y)
-# findall	Returns a list containing all matches
-# search	Returns a Match object if there is a match anywhere in the string
-# split	Returns a list where the string has been split at each match
+# import re
+#
+# txt = "The rain in Spain"
+# x = re.findall("ai", txt)
+# print(x)
+# #
+# import re
+# #
+# txt = "1ainhello_?-_1a4566ainin Spain"
+# # x = re.findall("he.{2}o*|.1e", txt)
+# y = re.search(r"ain\Z", txt)
+# x = re.findall(r"\W+", txt)
+# print(x)
+# print(y)
+#
+# # '\w\S*@.*\w?\d+'
+#
+# # findall	Returns a list containing all matches
+# # search	Returns a Match object if there is a match anywhere in the string
+# # split	Returns a list where the string has been split at each match
 # sub	Replaces one or many matches with a string
-
-
+#
+# # print("\\n")
 # []	A set of characters	"[a-m]"
 # \	Signals a special sequence (can also be used to escape special characters)	"\d"
-# .	Any character (except newline character)	"he..o"
+# .	Any character (except newline character)	"he..ojfhrbgjrfghfvg"
 # ^	Starts with	"^hello"
 # $	Ends with	"planet$"
-# *	Zero or more occurrences	"he.*o"
+# *	Zero or more occurrences	"hel+o"
 # +	One or more occurrences	"he.+o"
 # ?	Zero or one occurrences	"he.?o"
 # {}	Exactly the specified number of occurrences	"he.{2}o"
 # |	Either or	"falls|stays"
 
+import re
 
-# \A	Returns a match if the specified characters are at the beginning of the string	"\AThe"
-# \b	Returns a match where the specified characters are at the beginning or at the end of a word
+string = "i am at zoo with anizmal "
+x = re.findall(r"^[a-z]+_[a-z]+",string)
+print(x)
+
+# #
+# \A	Returns a match if the specified characters are at the beginning of the string	"\AThe""^The"
+# \b	Returns a match where the specified characters are at the beginning and at the end of a word
 # (the "r" in the beginning is making sure that the string is being treated as a "raw string")	r"\bain"
 #
 # r"ain\b"
 #
 # \B	Returns a match where the specified characters are present, but NOT at the beginning (or at the end) of a word
 # (the "r" in the beginning is making sure that the string is being treated as a "raw string")	r"\Bain"
-
+#
 #
 # \d	Returns a match where the string contains digits (numbers from 0-9)	"\d"
 # \D	Returns a match where the string DOES NOT contain digits	"\D"
